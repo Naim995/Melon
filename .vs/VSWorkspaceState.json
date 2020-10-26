@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\MelonAutomationTaskAssigment",
-    "\\MelonAutomationTaskAssigment\\Features",
-    "\\MelonAutomationTaskAssigment\\obj",
-    "\\MelonAutomationTaskAssigment\\obj\\Release"
+    "\\MelonAutomationTaskAssigment\\Features"
   ],
-  "SelectedNode": "\\MelonAutomationTaskAssigment\\MelonAutomationTaskAssigment.csproj",
+  "SelectedNode": "\\MelonAutomationTaskAssigment\\Features",
   "PreviewInSolutionExplorer": false
 }
