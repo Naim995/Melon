@@ -202,7 +202,7 @@ namespace MelonAutomationTaskAssigment
             }
             catch(Exception)
             {
-                _driver.FindElement(By.CssSelector("//nav[@data-qa='pagination']/descendant::li"));
+                _driver.FindElement(By.XPath("//nav[@data-qa='pagination']/descendant::li"));
             }
 
         }
