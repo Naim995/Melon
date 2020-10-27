@@ -21,7 +21,7 @@ namespace MelonAutomationTaskAssigment
         public SearchResultPage(IWebDriver driver)
         {
             _driver = driver;
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
         }
 
         public void SearchFor(string keyword)

@@ -4,24 +4,33 @@ using System;
 using TechTalk.SpecFlow;
 using BoDi;
 using System.ComponentModel;
+using OpenQA.Selenium.Remote;
 
 namespace MelonAutomationTaskAssigment.Features
 {
     [Binding]
     public class PagePaginationSteps
     {
-        IWebDriver driver;
+        
         SearchResultPage _searchresultpage;
+        IObjectContainer objectContainer;
+        ScenarioContext sctx;
+        IWebDriver driver1;
+        public PagePaginationSteps(IObjectContainer _objectContainer, ScenarioContext _sctx)
+        {
+            objectContainer = _objectContainer;
+            this.sctx = _sctx;
+        }
+
         [BeforeScenario]
         public void ChromeDriverSetup()
         {
-            driver = new ChromeDriver();
-            _searchresultpage = new SearchResultPage(driver);
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("https://de.myworld.com/");
+            driver1 = new ChromeDriver();
+            driver1.Manage().Window.Maximize();
+            objectContainer.RegisterInstanceAs<IWebDriver>(driver1);
+            driver1.Navigate().GoToUrl("https://de.myworld.com/");
+            _searchresultpage = new SearchResultPage(driver1);
         }
-
-
 
         [Given(@"a user searches for (.*) on the search box")]
         public void GivenAUserSearchesForBookOnTheSearchBox(string keyword)
@@ -103,7 +112,7 @@ namespace MelonAutomationTaskAssigment.Features
         [AfterScenario]
         public void DisposeDriverAfterScenario()
         {
-            driver.Quit();
+            driver1.Quit();
         }
     }
 }
