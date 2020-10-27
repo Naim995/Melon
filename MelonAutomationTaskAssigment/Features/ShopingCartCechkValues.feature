@@ -13,3 +13,5 @@ Scenario: Shopping cart check values
 	And clicks on random category
 	And clicks on random product
 	And adds the product to the shopping card
+	When the user opens the shopping cart
+	Then the price of the product matches the price on the cart

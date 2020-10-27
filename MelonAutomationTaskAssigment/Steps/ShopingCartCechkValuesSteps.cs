@@ -54,5 +54,18 @@ namespace MelonAutomationTaskAssigment.Steps
         {
             _prodpage.ClickAddToCartbutton();
         }
+
+        [When(@"the user opens the shopping cart")]
+        public void WhenTheUserOpensTheShoppingCart()
+        {
+            _prodpage.ClickCart();
+        }
+
+        [Then(@"the price of the product matches the price on the cart")]
+        public void ThenThePriceOfTheProductMatchesThePriceOnTheCart()
+        {
+            _prodpage.CheckProductPriceValue();
+        }
+
     }
 }

@@ -18,8 +18,8 @@ namespace MelonAutomationTaskAssigment.Steps
 
         public void ClickRandomCategory()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//h3[@data-qa='allCategoriesPageCategoryName']")));
-            IList<IWebElement> elem = _driver.FindElements(By.XPath("//h3[@data-qa='allCategoriesPageCategoryName']"));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//h3[@data-qa='allCategoriesPageCategoryName']/a")));
+            IList<IWebElement> elem = _driver.FindElements(By.XPath("//h3[@data-qa='allCategoriesPageCategoryName']/a"));
             Random r = new Random();
             int randnum = r.Next(elem.Count);
             var element = elem[randnum];
